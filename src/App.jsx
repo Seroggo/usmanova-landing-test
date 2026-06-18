@@ -1,8 +1,15 @@
+import { useState } from 'react'
 import Hero from './components/Hero'
 import TrustSection from './components/TrustSection'
 import ProgramsSection from './components/ProgramsSection'
 
 function App() {
+  const [selectedProgram, setSelectedProgram] = useState(null)
+
+  const handleSelectProgram = (program) => {
+    setSelectedProgram(program)
+  }
+
   return (
     <div className="page">
       <header className="site-header">
@@ -22,7 +29,10 @@ function App() {
       <main>
         <Hero />
         <TrustSection />
-        <ProgramsSection />
+        <ProgramsSection
+          selectedProgram={selectedProgram}
+          onSelectProgram={handleSelectProgram}
+        />
       </main>
     </div>
   )

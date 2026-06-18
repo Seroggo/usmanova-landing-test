@@ -1,7 +1,7 @@
 import { programs } from '../data/programs'
 import LeadFormPreview from './LeadFormPreview'
 
-function ProgramsSection() {
+function ProgramsSection({ selectedProgram, onSelectProgram }) {
   return (
     <section className="programs section" id="programs">
       <div className="container">
@@ -16,21 +16,32 @@ function ProgramsSection() {
 
         <div className="programs__layout">
           <div className="programs__grid">
-            {programs.map((program) => (
-              <article className="program-card" key={program.id}>
-                <span className="program-card__tag">{program.tag}</span>
-                <h3>{program.title}</h3>
-                <p>{program.description}</p>
-                <small>{program.bestFor}</small>
+            {programs.map((program) => {
+              const isSelected = selectedProgram?.id === program.id
 
-                <a className="program-card__button" href="#lead-form">
-                  Выбрать
-                </a>
-              </article>
-            ))}
+              return (
+                <article
+                  className={`program-card ${isSelected ? 'program-card--selected' : ''}`}
+                  key={program.id}
+                >
+                  <span className="program-card__tag">{program.tag}</span>
+                  <h3>{program.title}</h3>
+                  <p>{program.description}</p>
+                  <small>{program.bestFor}</small>
+
+                  <a
+                    className="program-card__button"
+                    href="#lead-form"
+                    onClick={() => onSelectProgram(program)}
+                  >
+                    {isSelected ? 'Выбрано' : 'Выбрать'}
+                  </a>
+                </article>
+              )
+            })}
           </div>
 
-          <LeadFormPreview />
+          <LeadFormPreview selectedProgram={selectedProgram} />
         </div>
       </div>
     </section>
