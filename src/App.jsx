@@ -1,9 +1,30 @@
+import Hero from './components/Hero'
+import TrustSection from './components/TrustSection'
+import ProgramsSection from './components/ProgramsSection'
+
 function App() {
   return (
-    <main className="app">
-      <h1>Usmanova Landing Test</h1>
-      <p>Mini landing: offer -&gt; trust -&gt; programs -&gt; lead form</p>     
-    </main>
+    <div className="page">
+      <header className="site-header">
+        <div className="container site-header__inner">
+          <a className="site-logo" href="#top" aria-label="На первый экран">
+            UFIT
+          </a>
+
+          <nav className="site-nav" aria-label="Навигация по странице">
+            <a href="#trust">Экспертность</a>
+            <a href="#programs">Программы</a>
+            <a href="#lead-form">Заявка</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <Hero />
+        <TrustSection />
+        <ProgramsSection />
+      </main>
+    </div>
   )
 }
 
