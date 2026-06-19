@@ -8,10 +8,7 @@ function ProgramsSection({ selectedProgram, onSelectProgram }) {
         <div className="section-heading">
           <p className="eyebrow">Выбор направления</p>
           <h2>Выберите программу под свою цель</h2>
-          <p>
-            Четыре понятных сценария вместо перегруженного каталога. Так страница
-            остаётся короткой и ведёт пользователя к заявке.
-          </p>
+
         </div>
 
         <div className="programs__layout">
