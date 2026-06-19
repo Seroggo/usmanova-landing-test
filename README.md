@@ -1,16 +1,75 @@
-# React + Vite
+# Usmanova Landing Test
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Demo mini landing page для тестового задания на вакансию «Вайбкодер / Сборщик лендингов и воронок на AI».
 
-Currently, two official plugins are available:
+Публичная ссылка: https://usmanova-landing-test.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+GitHub-репозиторий: https://github.com/Seroggo/usmanova-landing-test
 
-## React Compiler
+## Что сделано
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Повторены три ключевых экрана исходного фитнес-лендинга и собраны в рабочий mini funnel:
 
-## Expanding the ESLint configuration
+1. Первый экран с оффером.
+2. Блок доверия, экспертности и социального доказательства.
+3. Блок программ с CTA и формой заявки.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Что работает
+
+* Кнопка на первом экране ведёт к выбору программы.
+* Карточки программ кликабельны.
+* Выбранная программа подсвечивается.
+* Выбранная программа передаётся в форму заявки.
+* Select в форме синхронизируется с выбранной программой.
+* Отправка формы не перезагружает страницу.
+* Demo-заявки сохраняются в Google Sheets через Google Apps Script.
+
+Для demo Google Sheets используется как простой lead-capture слой, чтобы можно было проверить путь заявки от формы до таблицы. В production этот слой можно заменить на CRM, email-уведомления, webhook, Supabase или backend заказчика.
+
+## Стек
+
+* Vite
+* React
+* CSS
+* Google Apps Script
+* Google Sheets
+* GitHub
+* Vercel
+
+Tailwind CSS не используется.
+
+## Локальный запуск
+
+Установка зависимостей:
+
+```bash
+npm install
+```
+
+Запуск dev-сервера:
+
+```bash
+npm run dev
+```
+
+Production build:
+
+```bash
+npm run build
+```
+
+Локальный preview production-сборки:
+
+```bash
+npm run preview
+```
+
+## Деплой
+
+Проект опубликован на Vercel из GitHub-репозитория.
+
+Настройки Vercel:
+
+* Framework Preset: Vite
+* Build Command: npm run build
+* Output Directory: dist
